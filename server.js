@@ -50,7 +50,7 @@ io.on('connection', (socket) => {
     let connection = findConnection(socket.id)
     connection.user = user
     // emit welcome message to new user
-    socket.emit('welcome', `Hi ${user.name}, welcome to Simple Chat!`)
+    socket.emit('welcome', `Hi ${user.name}. Welcome to Relac.js!`)
     // broadcast their arrival to everyone else
     let broadcastMsg = user.name + ' has joined the chat.'
     socket.broadcast.emit('joined', broadcastMsg)
