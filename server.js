@@ -32,7 +32,9 @@ io.on('connection', (socket) => {
     if (connection) {
       connections.splice(connections.indexOf(connection), 1)
       if (connection.user) {
-        socket.broadcast.emit('left', connection.user)
+        let userLeftMsg = connection.user.name + ' has left the chat.'
+        socket.broadcast.emit('left', userLeftMsg)
+        // socket.broadcast.emit('left', connection.user)
         socket.broadcast.emit('online', connections)
         console.log(`## ${connection.user.name}(${connection.id}) disconnected. Remaining: ${connections.length}.`)
       } else {
@@ -50,7 +52,8 @@ io.on('connection', (socket) => {
     // emit welcome message to new user
     socket.emit('welcome', `Hi ${user.name}, welcome to Simple Chat!`)
     // broadcast their arrival to everyone else
-    socket.broadcast.emit('joined', user)
+    let broadcastMsg = user.name + ' has joined the chat.'
+    socket.broadcast.emit('joined', broadcastMsg)
     io.sockets.emit('online', connections)
 
     console.log(`## ${connection.user.name} joined the chat on (${connection.id}).`)
@@ -60,8 +63,10 @@ io.on('connection', (socket) => {
   socket.on('chat', (msg) => {
     let connection = findConnection(socket.id)
     // broadcast to other users
-    socket.broadcast.emit('chat', {message: msg, user: connection.user})
-
-    console.log(`## ${connection.user.name} said: ${msg}`)
+    let msgWithUser = connection.user.name + ': ' + msg
+    socket.broadcast.emit('chat', msgWithUser)
+    // socket.broadcast.emit('chat', {message: msg, user: connection.user})
+    // console.log(`## ${connection.user.name} said: ${msg}`)
+    console.log(msgWithUser)
   })
 })

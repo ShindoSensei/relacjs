@@ -1,3 +1,26 @@
 #status{
   font-size: 0.3em;
+  margin-left: 1em;
+}
+
+.chatWindow{
+  min-height: 25em;
+  max-height: 25em;
+  overflow-y: scroll;
+  text-align: left;
+  display:flex;
+  flex-direction:column-reverse;
+}
+
+.panel{
+  width:70%;
+}
+
+.messageBox{
+  width:90%;
+  height:2.5em;
+}
+
+.hidden{
+  display:none;
 }

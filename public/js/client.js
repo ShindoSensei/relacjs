@@ -1,6 +1,5 @@
 /* globals $ io */
-$(function () {
-  'use strict'
+
   // connect the socket.io client to our webserver (assuming it's running on the same port)
   var socket = io(window.location.host)
 
@@ -8,6 +7,9 @@ $(function () {
   var user = {
     name: 'anon'
   }
+
+  // import React from 'react'
+  // import {render} from 'react-dom'
 
   // some basic form validation functions
   function disableForm (disable) {
@@ -117,4 +119,3 @@ $(function () {
     // halt default form behaviour
     return false
   })
-})
