@@ -57,7 +57,7 @@ class App extends React.Component {
   render () {
     return (
       <div className='container'>
-        <h1>Chat.js<StatusLabel socket={socket} /></h1>
+        <h1>Relac.js<StatusLabel socket={socket} /></h1>
         <main className='panel panel-default'>
           <div className='panel-heading'>
             <div>Connected: </div>

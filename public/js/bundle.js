@@ -22155,7 +22155,7 @@ var App = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'Chat.js',
+          'Relac.js',
           _react2.default.createElement(_statuslabel.StatusLabel, { socket: socket })
         ),
         _react2.default.createElement(
