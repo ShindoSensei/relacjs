@@ -9584,8 +9584,7 @@ var Form = exports.Form = function (_React$Component) {
       this.props.setName(this.state.user.name);
       this.setState({
         disableUserForm: true,
-        display: 'hidden',
-        focus: false
+        display: 'hidden'
       });
       this.props.socket.emit('join', this.state.user);
     }
@@ -9603,7 +9602,7 @@ var Form = exports.Form = function (_React$Component) {
             value: this.state.user.name,
             onChange: this.changeFunc.bind(this),
             placeholder: 'Your name here',
-            required: true, autoFocus: this.focus,
+            required: true, autoFocus: this.state.focus,
             disabled: this.state.disableUserForm
           }),
           _react2.default.createElement(
@@ -9751,8 +9750,7 @@ var Message = exports.Message = function (_React$Component) {
 
     _this.state = {
       disableMessage: true,
-      typedMessage: '',
-      focus: true
+      typedMessage: ''
     };
     return _this;
   }
@@ -9781,6 +9779,7 @@ var Message = exports.Message = function (_React$Component) {
       this.setState({
         disableMessage: false
       });
+      this.messageInput.focus(); // using ref special attribute
     }
   }, {
     key: 'componentDidMount',
@@ -9794,18 +9793,23 @@ var Message = exports.Message = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         'form',
-        { onSubmit: this.submitMessage.bind(this), id: 'messageForm' },
+        { onSubmit: this.submitMessage.bind(this), id: 'messageForm', className: this.state.display },
         _react2.default.createElement(
           'fieldset',
           null,
           _react2.default.createElement('input', {
             type: 'text',
+            ref: function ref(input) {
+              _this2.messageInput = input;
+            },
             value: this.state.typedMessage,
             onChange: this.typeFunc.bind(this),
             placeholder: 'Your message here',
-            required: true, autoFocus: this.focus,
+            required: true,
             disabled: this.state.disableMessage,
             className: 'messageBox'
           }),

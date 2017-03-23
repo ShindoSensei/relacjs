@@ -5,8 +5,7 @@ export class Message extends React.Component {
     super()
     this.state = {
       disableMessage: true,
-      typedMessage: '',
-      focus: true
+      typedMessage: ''
     }
   }
 
@@ -30,6 +29,7 @@ export class Message extends React.Component {
     this.setState({
       disableMessage: false
     })
+    this.messageInput.focus() // using ref special attribute
   }
 
   componentDidMount () {
@@ -41,14 +41,15 @@ export class Message extends React.Component {
 
   render () {
     return (
-      <form onSubmit={this.submitMessage.bind(this)} id='messageForm'>
+      <form onSubmit={this.submitMessage.bind(this)} id='messageForm' className={this.state.display}>
         <fieldset>
           <input
             type='text'
+            ref={(input) => { this.messageInput = input }}
             value={this.state.typedMessage}
             onChange={this.typeFunc.bind(this)}
             placeholder='Your message here'
-            required autoFocus={this.focus}
+            required
             disabled={this.state.disableMessage}
             className='messageBox'
             />

@@ -25,8 +25,7 @@ export class Form extends React.Component {
     this.props.setName(this.state.user.name)
     this.setState({
       disableUserForm: true,
-      display: 'hidden',
-      focus: false
+      display: 'hidden'
     })
     this.props.socket.emit('join', this.state.user)
   }
@@ -40,7 +39,7 @@ export class Form extends React.Component {
             value={this.state.user.name}
             onChange={this.changeFunc.bind(this)}
             placeholder='Your name here'
-            required autoFocus={this.focus}
+            required autoFocus={this.state.focus}
             disabled={this.state.disableUserForm}
             />
           <button className='btn btn-success btn-xs' disabled={this.state.disableUserForm}>
