@@ -2,7 +2,7 @@
 
 A simple chat app written in Node.js using express framework.
 
-Demo app available at  [relacjs.herokuapp.com](relacjs.herokuapp.com)
+Demo app available at  [https://relacjs.herokuapp.com/](https://relacjs.herokuapp.com/)
 
 ## Get started
 
