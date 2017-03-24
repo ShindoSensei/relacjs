@@ -1,10 +1,12 @@
+.gitignore
+
 # Logs
 logs
 *.log
 npm-debug.log*
 
 # Compiled JS
-bundle.js
+public/js/bundle.js
 
 # Runtime data
 pids
