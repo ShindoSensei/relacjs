@@ -50,3 +50,8 @@ export class Form extends React.Component {
     )
   }
 }
+
+Form.propTypes = {
+  socket: React.PropTypes.object,
+  setName: React.PropTypes.func
+}

@@ -9524,6 +9524,11 @@ var Chat = exports.Chat = function (_React$Component) {
   return Chat;
 }(_react2.default.Component);
 
+Chat.propTypes = {
+  socket: _react2.default.PropTypes.object,
+  user: _react2.default.PropTypes.string
+};
+
 /***/ }),
 /* 81 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9618,6 +9623,11 @@ var Form = exports.Form = function (_React$Component) {
   return Form;
 }(_react2.default.Component);
 
+Form.propTypes = {
+  socket: _react2.default.PropTypes.object,
+  setName: _react2.default.PropTypes.func
+};
+
 /***/ }),
 /* 82 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -9702,7 +9712,9 @@ var StatusLabel = exports.StatusLabel = function (_React$Component) {
   return StatusLabel;
 }(_react2.default.Component);
 
-StatusLabel.propTypes = {};
+StatusLabel.propTypes = {
+  socket: _react2.default.PropTypes.object
+};
 
 /***/ }),
 /* 83 */
@@ -9825,6 +9837,12 @@ var Message = exports.Message = function (_React$Component) {
 
   return Message;
 }(_react2.default.Component);
+
+Message.propTypes = {
+  socket: _react2.default.PropTypes.object,
+  userName: _react2.default.PropTypes.string,
+  sendMsg: _react2.default.PropTypes.func
+};
 
 /***/ }),
 /* 85 */

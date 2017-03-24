@@ -39,4 +39,5 @@ export class StatusLabel extends React.Component {
 }
 
 StatusLabel.propTypes = {
+  socket: React.PropTypes.object
 }

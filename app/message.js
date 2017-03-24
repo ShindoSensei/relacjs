@@ -61,3 +61,9 @@ export class Message extends React.Component {
     )
   }
 }
+
+Message.propTypes = {
+  socket: React.PropTypes.object,
+  userName: React.PropTypes.string,
+  sendMsg: React.PropTypes.func
+}

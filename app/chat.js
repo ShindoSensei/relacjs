@@ -41,3 +41,8 @@ export class Chat extends React.Component {
   }
 
 }
+
+Chat.propTypes = {
+  socket: React.PropTypes.object,
+  user: React.PropTypes.string
+}
