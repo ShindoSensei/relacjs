@@ -104,7 +104,7 @@
     return false
   })
 
-  // handle form submission for sending a message
+  // handle form submission for sending a message.
   $('#MessageForm').submit(function (event) {
     var msg = $('#MessageForm input').val()
     if (msg.length === 0) return false
