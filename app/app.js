@@ -39,20 +39,6 @@ class App extends React.Component {
   componentDidMount () {
     socket.on('online', this.displayUsers.bind(this))
   }
-  // socket.on('online', function (connections) {
-  //   var names = ''
-  //   console.log('Connections: ', connections)
-  //   for (var i = 0; i < connections.length; ++i) {
-  //     if (connections[i].user) {
-  //       if (i > 0) {
-  //         if (i === connections.length - 1) names += ' and '
-  //         else names += ', '
-  //       }
-  //       names += connections[i].user.name
-  //     }
-  //   }
-  //   $('#connected').text(names)
-  // })
 
   render () {
     return (

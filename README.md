@@ -1,5 +1,11 @@
 # Simple Chat App
 
-A starter kit for building a socket.io based chat app with your frontend framwork of choice.
+A simple chat app written in Node.js using express framework.
 
-Comes with an example client written in jQuery.
+## Built with
+* Socket.io
+* React.js
+* Webpack
+
+
+*Comes with an e.g. client written in jQuery(Some parts tweaked from this original version)*
